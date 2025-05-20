@@ -7,12 +7,12 @@ losAngelesDateElement.innerHTML =losAngelesTime.format("MMMM Do YYYY");
 losAngelesTimeElement.innerHTML =losAngelesTime.format("h:mm:ss [<small>]A[</small>]");
 
 
-let parisElement = document.querySelector("#paris");
-let parisDateElement = parisElement.querySelector(".date");
-let parisTimeElement = parisElement.querySelector(".time");
-let parisTime = moment().tz("Europe/Paris");
-parisDateElement.innerHTML =parisTime.format("MMMM Do YYYY");
-parisTimeElement.innerHTML =parisTime.format("h:mm:ss [<small>]A[</small>]");
+let berlinElement = document.querySelector("#berlin");
+let berlinDateElement = berlinElement.querySelector(".date");
+let berlinTimeElement = berlinElement.querySelector(".time");
+let berlinTime = moment().tz("Europe/Berlin");
+berlinDateElement.innerHTML =berlinTime.format("MMMM Do YYYY");
+berlinTimeElement.innerHTML =berlinTime.format("h:mm:ss [<small>]A[</small>]");
 
 
 let sydneyElement = document.querySelector("#sydney");
@@ -22,5 +22,32 @@ let sydneyTime = moment().tz("Australia/Sydney");
 sydneyDateElement.innerHTML =sydneyTime.format("MMMM Do YYYY");
 sydneyTimeElement.innerHTML =sydneyTime.format("h:mm:ss [<small>]A[</small>]");
 }
-setInterval(updateClock, 1000);
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(cityTimeZone);
+   
+    let cityDisplayElement = document.querySelector("#city");
+    cityDisplayElement.innerHTML = `
+
+
+    <div class="city" >
+        <div class="city-date">
+                <h2>${cityName}</h2>
+        <div class="date">${cityTime.format("MMM Do YYYY")}</div>
+        </div>
+        <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.
+            format(
+                "A"
+            )}</small></div>
+    </div>
+    `;
+}
+let citySelectElement = document.querySelector("#city-select");
+citySelectElement.addEventListener("change", updateCity);
+
 updateClock();
+setInterval(updateClock, 1000);
+
+
