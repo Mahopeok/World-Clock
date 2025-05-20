@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="
-https://cdn.jsdelivr.net/npm/moment@3h3.30.1/moment.min.js
-"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.47/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,25 +18,25 @@ https://cdn.jsdelivr.net/npm/moment@3h3.30.1/moment.min.js
         <option value="">Paris</option>
     </select>
 
-    <div class="city">
-        <div class="city-date"><h2>Los Angelespari</h2>
-        <div class="date">August 15th 2025</div>
+    <div class="city" id="los-angeles">
+        <div class="city-date"><h2>Los Angeles</h2>
+        <div class="date"></div>
         </div>
-        <div class="time">08:02:30 <span >PM</span></div>
-        </div>
+        <div class="time"></div>
+    </div>
    
-     <div class="city">
+     <div class="city" id="paris">
         <div class="city-date"><h2>Paris</h2>
-        <div class="date">August 15th 2025</div>
+        <div class="date"></div>
         </div>
-        <div class="time">08:02:30 <span >PM</span></div>
+        <div class="time"></div>
         </div>
 
-     <div class="city">
+     <div class="city" id="sydney">
         <div class="city-date"><h2>Sydney</h2>
-        <div class="date">August 15th 2025</div>
+        <div class="date"></div>
         </div>
-        <div class="time">08:02:30 <span >PM</span></div>
+        <div class="time"></div>
         </div>
     </div>
 
@@ -45,7 +44,7 @@ https://cdn.jsdelivr.net/npm/moment@3h3.30.1/moment.min.js
     </div>
     <footer>
         This project was coded with 💖 by  
-        <a href="https://github.com/Mahopeok/">Okpanachi Hope</a>  and isopen-sourced on 
+        <strong>Okpanachi Hope</strong>  and is open-sourced on 
         <a href="https://github.com/Mahopeok/World-Clock">Github</a> and hosted on 
         <a href="https://myworldclockprojectjs.netlify.app/">Netlify</a>
     </footer>
